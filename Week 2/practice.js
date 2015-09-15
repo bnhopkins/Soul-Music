@@ -25,25 +25,34 @@ function fizzBuzz(){
 		}
 	}
 }
-function chessBoard(){
+function chessBoard(rows, cols){
 	var board = "";
-	for(var i=0;i<8;i++){
-		for(var j=0;j<8;j++){
+	for(var i=0;i<cols;i++){
+		for(var j=0;j<rows;j++){
 			if (j%2==0 && i%2!=0 || i%2==0 && j%2!=0){
 				board+="#";
 				}
 			else{
-				board+=" ";
+				board+="--";
 			}
 		}
-		board+="\n";
+		board+="<br>";
 	}
-	console.log(board);
+	return board;
 }
-
 loopingATriangle();
 fizzBuzz();
-chessBoard();
 
+
+var theBoard = chessBoard(8,8);
+console.log(theBoard);
+
+var theChessBoardEl = document.getElementById("chessBoard");
+theChessBoardEl.innerHTML = theBoard;
+//Class Notes:
+
+//to display text on HTML file:
 
 //document.getElementById("loopingATriangle").innerHTML = loopingATriangle();
+//var theChessBoardEl =  document.getElementById('chessBoard');
+//theChessBoardEl.innerHTML =" hello";
